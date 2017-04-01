@@ -1,0 +1,17 @@
+#!/bin/bash
+
+VERSION=$(cat ../VERSION)
+
+echo "=> install manifest-tool"
+URL=https://github.com/estesp/manifest-tool/releases/download/v0.3.0/manifest-tool-amd64-linux
+
+curl -sLo ./manifest-tool ${URL}
+chmod +x ./manifest-tool
+
+echo "=> push multiarch"
+ARCH="linux/arm,linux/amd64"
+./manifest-tool push from-args \
+--platforms ${ARCH} \
+--template ${DOCKER_REPO}:${VERSION}-ARCH \
+--target ${DOCKER_REPO}:${VERSION}
+

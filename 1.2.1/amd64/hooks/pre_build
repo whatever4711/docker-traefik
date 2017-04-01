@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo "=> enable quemu"
+docker run --rm --privileged multiarch/qemu-user-static:register --reset
+
+echo "=> download binary"
+VERSION=$(cat ../VERSION)
+ARCH=$(basename $(pwd))
+URL=https://github.com/containous/traefik/releases/download/v${VERSION}/traefik_linux-${ARCH}
+
+curl -sLo ./traefik ${URL}
+chmod +x ./traefik
