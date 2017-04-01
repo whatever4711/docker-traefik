@@ -4,7 +4,7 @@ echo "=> enable quemu"
 docker run --rm --privileged multiarch/qemu-user-static:register --reset
 
 echo "=> download binary"
-ARCH=$(basename $(pwd)
+ARCH=$(basename $(pwd))
 VERSION=$(basename $(dirname $(pwd)))
 
 echo arch=$ARCH

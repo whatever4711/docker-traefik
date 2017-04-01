@@ -8,7 +8,7 @@ chmod +x ./manifest-tool
 
 
 echo "=> get metainfo"
-ARCH=$(basename $(pwd)
+ARCH=$(basename $(pwd))
 VERSION=$(basename $(dirname $(pwd)))
 
 echo arch=$ARCH
