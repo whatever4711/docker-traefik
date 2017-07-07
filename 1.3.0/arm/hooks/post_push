@@ -15,7 +15,7 @@ echo arch=$ARCH
 echo version=$VERSION
 
 echo "=> push multiarch"
-ARCH="linux/arm,linux/amd64"
+ARCH="linux/arm32v7,linux/arm64v8,linux/amd64"
 ./manifest-tool push from-args \
 --platforms ${ARCH} \
 --template ${DOCKER_REPO}:${VERSION}-ARCH \
